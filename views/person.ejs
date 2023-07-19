@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('./particals/head')%>
+    <title><%=result[0].name%></title>
+  </head>
+  <body>
+    <header><%- include('./particals/header')%></header>
+    <div class="col-lg-8 container mt-5">
+      <h1><%=result[0].name%></h1>
+      <div class="card mb-4">
+        <div class="card-body">
+          <div class="row">
+            <div class="col-sm-3">
+              <p class="fw-bold mb-0">Email</p>
+            </div>
+            <div class="col-sm-9">
+              <p class="mb-0"><%=result[0].email%></p>
+            </div>
+          </div>
+          <hr />
+          <div class="row">
+            <div class="col-sm-3">
+              <p class="fw-bold mb-0">Address1</p>
+            </div>
+            <div class="col-sm-9">
+              <p class="mb-0"><%=result[0].address1%></p>
+            </div>
+          </div>
+          <hr />
+          <div class="row">
+            <div class="col-sm-3">
+              <p class="fw-bold mb-0">Address 2</p>
+            </div>
+            <div class="col-sm-9">
+              <p class="mb-0"><%=result[0].address2%></p>
+            </div>
+          </div>
+          <hr />
+          <div class="row">
+            <div class="col-sm-3">
+              <p class="fw-bold mb-0">City</p>
+            </div>
+            <div class="col-sm-9">
+              <p class="mb-0"><%=result[0].city%></p>
+            </div>
+          </div>
+          <hr />
+          <div class="row">
+            <div class="col-sm-3">
+              <p class="fw-bold mb-0">Zip Code</p>
+            </div>
+            <div class="col-sm-9">
+              <p class="mb-0"><%=result[0].zip%></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer><%- include('particals/footer')%></footer>
+  </body>
+</html>

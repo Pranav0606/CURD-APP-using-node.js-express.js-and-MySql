@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('./particals/head')%>
+    <title>CURD APP || Data</title>
+  </head>
+  <body>
+    <header><%- include('./particals/header')%></header>
+
+    <main class="container mt-2">
+      <div class="mt-2">
+        <% if(result.length > 0){%>
+        <table align="center" class="table table-striped">
+          <thead>
+            <tr></tr>
+
+            <tr>
+              <th class="col">Sr. No</th>
+              <th class="col">Name</th>
+              <th class="col">Email</th>
+              <th class="col">Address 1</th>
+              <th class="col">Address 2</th>
+              <th class="col">City</th>
+              <th class="col">Zip Code</th>
+              <th class="col">Action</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <% var i = 1 %> <% result.forEach((e)=>{ %>
+
+            <tr>
+              <td><%- i++ %></td>
+              <td><%=e.name%></td>
+              <td><%=e.email%></td>
+              <td><%=e.address1%></td>
+              <td>
+                <% if(e.address2 != "NULL") {%> <%=e.address2%> <% }else{ %> -
+                <%}%>
+              </td>
+              <td><%=e.city%></td>
+              <td><%=e.zip%></td>
+              <td>
+                <form action="/view" method="GET">
+                  <input type="hidden" value="<%=e.id%>" name="id" />
+                  <Button class="btn btn-primary m-2" type="submit"
+                    >View</Button
+                  >
+                </form>
+
+                <form action="/edit" method="get">
+                  <input type="hidden" value="<%=e.id%>" name="id" />
+                  <Button class="btn btn-primary m-2">Edit</Button>
+                </form>
+                <form action="/records/<%=e.id%>?_method=DELETE" method="POST">
+                  <input type="hidden" name="id" value="<%=e.id%>" id="id" />
+                  <input
+                    type="submit"
+                    value="Delete"
+                    class="btn btn-primary m-2"
+                  />
+                </form>
+              </td>
+            </tr>
+            <% })%>
+          </tbody>
+        </table>
+        <% } else{%>
+        <h1>No Data Found</h1>
+        <% }%>
+      </div>
+    </main>
+
+    <footer><%- include('./particals/footer')%></footer>
+  </body>
+  <script>
+  </script>
+</html>
