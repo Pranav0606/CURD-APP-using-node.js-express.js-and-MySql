@@ -7,8 +7,9 @@
 
 <p>This is the simple web app which focused on the CURD operations of the database.<br>
 </p>
-| Initial | | Form |
-| C |  | Create |
-| R |  | Read |
-| U |  | Update |
-| D |  | Delete |
+| Initial | Full form |
+|-----:|-----------|
+|     C| Create |
+|     R| Read    |
+|     U| Update       |
+|     D| Delete       |
